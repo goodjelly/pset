@@ -26,3 +26,8 @@ All code are in Code folder, in future there might be folders as: .ignore (#cont
 .figures(of generated figures), etc.
 IT is recommended to run the code file X_Y_pset4.py in Colab since it is generated there. Use default Python 3 environment. 
 Need to install pandas, numpy, matplotlit.
+
+
+Figure
+
+This is what the figure looks like after run code on Colab.
