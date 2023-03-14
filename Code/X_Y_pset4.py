@@ -10,32 +10,35 @@ Original file is located at
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
+#need to upload this data file to your work space
 crabn=pd.read_csv('/content/Uploaded Feature List_CrabUrine_neg_V2.txt',sep='\t')
-
+#known_n is a df with only identified reads
 known_n=crabn.dropna(subset=["Formula"])
-
+#the compounds without a name is labeled with MW_RT(retention time), we focuse on the named chemicals.
 known = known_n.loc[known_n['Name'].str.contains("_")]
 
 Name_chemicals=known_n.drop(known.index)
-
+#two of the crabs don't have MS reading. they were possibily sacrifised for other reason.
+#drop them from the df.
 crab_chemical=Name_chemicals.dropna( axis=1)
-
+#there are duplicated readiing of the same chemical due to its different retention time, we sum th epeak for the 
+#same chemical and drop duplicates.
 neg_list= crab_chemical.groupby('Name')['MA',"MB","MD","OA","OC","OD"].transform('sum')
 
 new_list=neg_list.sort_values(by="MA",ascending=False).drop_duplicates()
-
+#sor the df from large to small peaks of the first crab "MA" (mudcrab feeding)
 final_n=crab_chemical.loc[new_list.index].sort_values(by="MA",ascending=False)
-
+#start plotting
 import numpy as np
 import matplotlib.pyplot as plt
 X = np.arange(10)
 final_n.reset_index
-
+#call figure
 fig = plt.figure()
 ax = fig.add_axes([0,0,1,1])
-ploty=[]
-ploty=pd.DataFrame(ploty)
+ploty=[] 
+#make a new df
+ploty=pd.DataFrame(ploty) 
 ploty[0]=final_n['MA']
 ploty[1]=final_n['MB']
 ploty[2]=final_n['MD']
@@ -43,13 +46,15 @@ ploty[3]=final_n['OA']
 ploty[4]=final_n['OC']
 ploty[5]=final_n['OD']
 ploty[6]=final_n['Name']
+#plot the top 10 chemicals with most signal according to "MA" peaks on each of the crabs.
 for i in range(6):
   ax.bar(X + 0.1*i, ploty[i][0:10], color=(0.15*i, 0, 0.1, 0.9), width = 0.1,label=final_n.columns[i+8])
   ax.legend()
+    #xticks is to locate the x label
 ax.set_xticks([0,1,2,3,4,5,6,7,8,9])
 ax.set_yscale('log')
 ax.set_xticklabels(ploty[6][0:10],rotation=90)
 ax.set_ylabel("MS Peak")
-plt.title("Top 10 Chemicals Found in Crab Urine")
+plt.title("Top 10 Chemicals Found in Crab Urine N Mode")
 
 plt.show()
