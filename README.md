@@ -1,5 +1,6 @@
-# pset
-Repo for the 440 final project report.
+# 20.440Finding_Urine_Metabolomic_Cues Between_Different_Blue_Crab_Diets_Using_Mass_Spectrometry_Data
+
+Repo for the 440 final project report
 
 Overview
 
