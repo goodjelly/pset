@@ -1,14 +1,13 @@
 # pset
-a new repo for the pset4
+Repo for the 440 final project report.
 
 Overview
 
 this repo contains data sets from MS data of crab urine (Poulin et al. https://www.pnas.org/doi/abs/10.1073/pnas.1713901115).
-The filed in Code will corresponds to their project stage-for now, it has one file for the pset 4. 
 
-Y_X_pset4.py simply organizes the data file into dataframes that simplifies our analysis process.
-generates a single bar plot that shows the top 10 chemicals with the higest peak from th negative mode of the MS data. 
-All packages are conventional pandas, matplotlib or numpy packages. 
+Bluecrab_Project_PythonCode.py organizes the data file into dataframes that simplifies our analysis process.
+It generates bar plots that shows the top 10 chemicals with the higest peak from th negative and Positive mode of the MS data. 
+All packages are conventional pandas, matplotlib or numpy packages as listed. 
 
 Data
 
@@ -30,4 +29,5 @@ Need to install pandas, numpy, matplotlit.
 
 Figure
 
-This is what the figure looks like after run code on Colab.
+This is what the figure looks like after run code on Colab and Metaboanalyst5.0.
+All figures in the Final Report are included here at original resolution.
