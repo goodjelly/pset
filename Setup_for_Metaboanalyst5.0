@@ -1,0 +1,11 @@
+//This is the guideline on how to use Metaboanalyst5.0 to regenerate the statistical plots in our final report. 
+Open Metaboanalyst5.0 -> https://www.metaboanalyst.ca/MetaboAnalyst/
+-> Click Here to Start
+-> Statistical Analysis [One Factor]
+Upload the MS files provided under Data folder, or simply type -> Study ID 1000922
+Check if the files have been read correctly. -> Proceed
+Select ->Interquantile range (IQR), 10%
+On the left pannel, ->Data Editor, ->Exclude MC, OB, -> Submit
+-> Cube root transformation, ->	Pareto scaling, -> Normalize, -> Proceed
+Select the corresponding statistical analysis to be performed.
+For all the tests, assume unequal variance when applicable. 
